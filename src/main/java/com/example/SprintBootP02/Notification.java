@@ -14,7 +14,6 @@ public class Notification {
         this.emailService = emailService;
     }
 
-
     void Display(){
         String str=emailService.sendEmail();
         System.out.println(str);
