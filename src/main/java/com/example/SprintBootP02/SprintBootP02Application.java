@@ -1,16 +1,16 @@
 package com.example.SprintBootP02;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class SprintBootP02Application {
+public class SprintBootP02Application implements CommandLineRunner {
 
-    @Autowired
+
     public final Notification notification;
 
-    public SprintBootP02Application(Notification notification) {
+    SprintBootP02Application(Notification notification) {
         this.notification = notification;
     }
 
@@ -18,6 +18,7 @@ public class SprintBootP02Application {
 		SpringApplication.run(SprintBootP02Application.class, args);
 	}
 
+    @Override
     public void run(String... args){
         notification.Display();
     }
